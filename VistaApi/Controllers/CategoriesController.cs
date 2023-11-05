@@ -44,7 +44,6 @@ namespace VistaApi.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Unable to Provide Food Items at this time");
             }
-
         }
 
         // GET: api/Categories/5
@@ -142,7 +141,6 @@ namespace VistaApi.Controllers
             {
                 return StatusCode(StatusCodes.Status409Conflict);
             }
-
             // Lets create it and Add it.
             try
             {
@@ -150,14 +148,13 @@ namespace VistaApi.Controllers
                 {
                     CategoryCode = category.CategoryCode,
                     CategoryName = category.CategoryName,
-
                 };
                 _context.Categories.Add(newCategory);
                 await _context.SaveChangesAsync();
             }
             catch 
             {   
-                    return StatusCode(StatusCodes.Status500InternalServerError);
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
             return CreatedAtAction("GetCategory", new { code = category.CategoryCode }, category);
         }

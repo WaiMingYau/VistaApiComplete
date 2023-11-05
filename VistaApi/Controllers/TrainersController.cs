@@ -35,9 +35,9 @@ namespace VistaApi.Controllers
                 var trainers = await _context.Trainers.ToListAsync();
                 List<DTO.TrainerItemDTO> dto = trainers.Select(c => new DTO.TrainerItemDTO
                 {
-                      TrainerId = c.TrainerId,
-                       Name = c.Name,
-                        Location = c.Location,
+                    TrainerId = c.TrainerId,
+                    Name = c.Name,
+                    Location = c.Location,
                 }
                 ).ToList();
                 return Ok(dto);
