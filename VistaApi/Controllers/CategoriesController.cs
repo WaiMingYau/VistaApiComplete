@@ -118,7 +118,7 @@ namespace VistaApi.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
-            // 204 OK and there is nothing to see here 
+            // 204 OK and there is nothing to see here
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
